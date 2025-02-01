@@ -25,7 +25,7 @@ class ElevatorSystem {
                 return;
             }
         }
-        throw new RuntimeException("All elevators are busy. Call type: " + type + ", Floor: " + floor);
+        throw new RuntimeException("Все лифты заняты. Тип вызова: " + type + ", Этаж: " + floor);
     }
 
     public Elevator[] getElevators() {
@@ -36,7 +36,7 @@ class ElevatorSystem {
         for (int i = 0; i < 10000; i++) {
             if (i % 20 == 0) {
                 try {
-                    int floor = random.nextInt(20) + 2;
+                    int floor = random.nextInt(15) + 2;
                     CallType type = CallType.values()[random.nextInt(CallType.values().length)];
                     processCall(type, floor);
                 } catch (Exception e) {
